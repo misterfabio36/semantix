@@ -27,9 +27,9 @@ val textFile = sc.textFile("hdfs://...")<br>
 val counts = textFile.flatMap(line=>line.split(" "))<br>
 .map(word =>(word, 1))<br>
 .reduceByKey(_+_)<br>
-counts.saveAsTextFile("hdfs://...")<br>
+counts.saveAsTextFile("hdfs://...")<br><br>
 
-1-Abre o arquivo
-2-Faz o split(separa as palavras) da linha por " "(espaço)
-3-Faz a classificação das pavras
-4-Retorna o resultado/total de palavrs agrupadas.
+1-Abre o arquivo<br>
+2-Faz o split(separa as palavras) da linha por " "(espaço)<br>
+3-Faz a classificação das pavras<br>
+4-Retorna o resultado/total de palavrs agrupadas.<br>
