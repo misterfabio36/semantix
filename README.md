@@ -6,10 +6,10 @@ Fonte: https://spark.apache.org/docs/latest/sql-getting-started.html
 OBS.: O arquivo (ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz) é protegito por senha, não consegui fazer o download.
 
 PERGUNTAS e RESPOSTAS
-Qual o objetivo do comando cache em Spark?
+Qual o objetivo do comando cache em Spark?<br>
 Evitar o reprocessamento de um conjunto de dados processado anteriormente, ou seja, o Spark irá deixar os dados disponíveis evitando utilização de recurso a cada chamada.
 
-O mesmo código implementado em Spark é normalmente​ mais rápido que a implementação equivalente em MapReduce. Por quê?
+O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. Por quê?<br>
 O MapReduce é eficiente para cálculo de processamento único, mas quando se trata de cálculo com várias execuções. Isto porque os resultados de saíde devem ser armazenados nos sistema de arquivos distribuídos, o que torna o processamento lento. Agora o código implementado em Spark suporta o compartilhamento de dados na memória, além de permitir a segmentação de passos, não sendo necessário criar uma nova fase Map e Reduce para cada cálculo.
 
 Qual é a função do SparkContext?
