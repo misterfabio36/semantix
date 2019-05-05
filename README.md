@@ -12,22 +12,22 @@ Evitar o reprocessamento de um conjunto de dados processado anteriormente, ou se
 O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. Por quê?<br>
 O MapReduce é eficiente para cálculo de processamento único, mas quando se trata de cálculo com várias execuções. Isto porque os resultados de saíde devem ser armazenados nos sistema de arquivos distribuídos, o que torna o processamento lento. Agora o código implementado em Spark suporta o compartilhamento de dados na memória, além de permitir a segmentação de passos, não sendo necessário criar uma nova fase Map e Reduce para cada cálculo.
 
-Qual é a função do SparkContext?
+Qual é a função do SparkContext?<br>
 SparkContext é onde podemos criar ou fazer as configurações necessárias via o SparkConf, e definir os detalhes para o processameto das rotinas. Além disso, ele que faz a interação com os Cluster Spark.
 
-Explique com suas palavras o que é Resilient Distributed Datasets(RDD).
+Explique com suas palavras o que é Resilient Distributed Datasets(RDD).<br>
 É um conjunto de dados criados e/ou transformados a partir de uma ou mais fone de dados.
 
-GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?
+GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?<br>
 O reduceByKey é capaz de tratar/classificar os dados a serem enviados para uma execução antes de enviá-los, isto faz com que o trafego de informações seja menor do que quando usamos o groupByKey. Isto porque o groupByKey não trata/classifica os dados antes do envio ao executor.
 
 
-Explique o que o código Scala abaixo faz.
-val textFile = sc.textFile("hdfs://...")
-val counts = textFile.flatMap(line=>line.split(" "))
-.map(word =>(word, 1))
-.reduceByKey(_+_)
-counts.saveAsTextFile("hdfs://...")
+Explique o que o código Scala abaixo faz.<br>
+val textFile = sc.textFile("hdfs://...")<br>
+val counts = textFile.flatMap(line=>line.split(" "))<br>
+.map(word =>(word, 1))<br>
+.reduceByKey(_+_)<br>
+counts.saveAsTextFile("hdfs://...")<br>
 
 1-Abre o arquivo
 2-Faz o split(separa as palavras) da linha por " "(espaço)
