@@ -16,7 +16,7 @@ public class Desafio {
 	
 		String logFile = "/sysroot/home/fabio/projetos/java/data"; // Should be some file on your system
 	    SparkSession spark = SparkSession.builder().appName("Simple Application").config("spark.master", "local").getOrCreate();
-		JavaRDD<Data> peopleRDD = spark.read()
+		JavaRDD<Data> dataRDD = spark.read()
 		  .textFile(logFile)
 		  .javaRDD()
 		  .map(line -> {
@@ -48,7 +48,7 @@ public class Desafio {
 		    return data;
 		  });
 		
-		Dataset<Row> dataDF = spark.createDataFrame(peopleRDD, Data.class);
+		Dataset<Row> dataDF = spark.createDataFrame(dataRDD, Data.class);
 		
 		dataDF.createOrReplaceTempView("data");
 		dataDF.show();
